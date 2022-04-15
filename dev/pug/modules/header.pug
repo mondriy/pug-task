@@ -1,0 +1,8 @@
+nav.nav
+  ul.menu
+    each category in ['Home', 'About me', 'Skills', 'Portfolio', 'Contacts']
+      a(href="#")
+        li.menu__item= category
+  .close 
+    +icon('close')
+hr

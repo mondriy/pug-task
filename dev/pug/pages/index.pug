@@ -1,0 +1,51 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page'
+
+block main
+	main.main
+		.main__info 
+			h1.name Denis Novik 
+			h3.occupation UX | UI designer<br>24 years old, Minsk
+			.language
+				span.language__item RU
+				span.delimiter
+				span.language__item.focus ENG
+			.burger(style="display: none")
+				+icon('burger')
+		.main__img 
+			img(src="static/img/content/Denis Novik.jpg", alt="Denis Novik")
+			
+block about 
+	.about 
+		h2.about__title About me
+		p.about__text 
+									| Hi, I'm Denis – UX/UI designer from Minsk.<br> 
+									| I'm interested in design and everything connected with it.
+		p.about__text 
+									| I'm studying at courses "Web and mobile design<br> 
+									| interfaces" in IT-Academy.
+		p.about__text 
+									| Ready to implement excellent projects<br> 
+									| with wonderful people.
+
+block skills 
+	.skills 
+		h2.skills__title Skills
+		p.skills__text 
+									| I work in such programs as
+		.skills__container 
+			+skill('Adobe Photoshop', 4)
+			+skill('Adobe Illustrator', 3)
+			+skill('Adobe After Effect', 4)
+			+skill('Figma', 4)
+
+block portfolio
+	.portfolio
+		h2.portfolio__title Portfolio
+		.portfolio__container 
+			+portfolio('fashion.jpg', '#', 'Online fashion store - Homepage')
+			+portfolio('reebok.jpg', '#', 'Reebok Store - Concept')
+			+portfolio('braun.jpg', '#', 'Braun Landing Page - Concept')

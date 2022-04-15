@@ -1,0 +1,45 @@
+@import "main-nav.styl"
+
+.nav
+  padding: 1em 0
+
+hr
+  width 100%
+  color primaryGrey
+  box-sizing border-box
+
+.menu
+  display flex
+  width 100%
+  justify-content space-between
+
+.menu__item
+  display inline-block
+  color primaryGrey
+  cursor pointer
+  transition color .2s
+  user-select none
+
+.menu__item:hover
+  color primaryBlack
+
+@media screen and (max-width: 500px) 
+  .nav
+    position absolute
+    left 0
+    top 0
+    width 100vw
+    height 100vh
+    z-index 1
+    background-color #fff
+    font-size hugeFontSize
+    padding 25px 25px
+    display none
+  hr
+    display none
+  .menu
+    flex-direction column
+  .menu__item:not(:last-child)
+    margin-bottom 1em
+    
+

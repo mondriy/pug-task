@@ -1,0 +1,31 @@
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="static/img/svg/symbol/sprite.svg#" + name)
+
+mixin skill(name,counter)
+	.skill 
+		.skill__icon
+			img(src="static/img/general/" + name + ".png", alt=name)
+		span.skill__name= name
+		.skill__stars
+			- for (let i = 0; i < 5; ++i) {
+				if (i >= counter)
+					+icon('star', 'blank')
+				else 
+					+icon('star')
+			- }
+
+mixin portfolio(src,href,title)
+	.portfolio__item 
+		.portfolio__item-img 
+			img(src="static/img/content/" + src, alt="example of project")
+		a.portfolio__item-title(href=href)= title
+
+mixin socialNetwork(name, href)
+	a(href=href)
+		+icon(name)
+
+mixin button(text,type,href)
+	a(class="button " + type href=href)= text 
+		
